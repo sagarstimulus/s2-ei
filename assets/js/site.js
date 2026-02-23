@@ -1,0 +1,121 @@
+﻿(function () {
+  var root = document.documentElement;
+  var storedTheme = localStorage.getItem('s2-theme');
+  if (storedTheme === 'dark' || storedTheme === 'light') {
+    root.setAttribute('data-theme', storedTheme);
+  }
+
+  function updateToggleLabel() {
+    var theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = theme === 'dark' ? 'light' : 'dark';
+    var toggles = document.querySelectorAll('[data-theme-toggle]');
+    toggles.forEach(function (btn) {
+      btn.setAttribute('aria-label', 'Switch to ' + next + ' mode');
+      btn.setAttribute('title', 'Switch to ' + next + ' mode');
+      btn.textContent = theme === 'dark' ? 'Light' : 'Dark';
+    });
+  }
+
+  function bindThemeToggle() {
+    var toggles = document.querySelectorAll('[data-theme-toggle]');
+    toggles.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        var next = current === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('s2-theme', next);
+        updateToggleLabel();
+      });
+    });
+    updateToggleLabel();
+  }
+
+  function bindReveal() {
+    var targets = document.querySelectorAll('.section, .card, .hero, .section-head');
+    targets.forEach(function (el) {
+      el.classList.add('reveal');
+    });
+
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+
+    var obs = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    targets.forEach(function (el) { obs.observe(el); });
+  }
+
+  function bindGalleryModal() {
+    var grid = document.querySelector('[data-gallery-grid]');
+    var modal = document.querySelector('[data-gallery-modal]');
+    var image = document.querySelector('[data-gallery-modal-image]');
+    var caption = document.querySelector('[data-gallery-modal-caption]');
+    if (!grid || !modal || !image || !caption) return;
+
+    var tiles = Array.prototype.slice.call(grid.querySelectorAll('.gallery-tile'));
+    var prev = modal.querySelector('.gallery-modal-nav.prev');
+    var next = modal.querySelector('.gallery-modal-nav.next');
+    var close = modal.querySelector('.gallery-modal-close');
+    var activeIndex = 0;
+
+    function render(index) {
+      var tile = tiles[index];
+      if (!tile) return;
+      image.src = tile.getAttribute('data-src') || '';
+      image.alt = tile.querySelector('img') ? tile.querySelector('img').alt : '';
+      caption.textContent = tile.getAttribute('data-caption') || image.alt || 'Project image';
+      activeIndex = index;
+    }
+
+    function open(index) {
+      render(index);
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+    }
+
+    function step(direction) {
+      var nextIndex = (activeIndex + direction + tiles.length) % tiles.length;
+      render(nextIndex);
+    }
+
+    tiles.forEach(function (tile, index) {
+      tile.addEventListener('click', function () { open(index); });
+    });
+
+    if (prev) prev.addEventListener('click', function () { step(-1); });
+    if (next) next.addEventListener('click', function () { step(1); });
+    if (close) close.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', function (event) {
+      if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (!modal.classList.contains('is-open')) return;
+      if (event.key === 'Escape') closeModal();
+      if (event.key === 'ArrowLeft') step(-1);
+      if (event.key === 'ArrowRight') step(1);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    bindThemeToggle();
+    bindReveal();
+    bindGalleryModal();
+  });
+})();
