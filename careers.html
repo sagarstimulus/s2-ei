@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>S2 Engineering | Careers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container bar">
+      <a class="brand brand-link" href="index.html"><img src="assets/img/logo-s2.svg" alt="S2 Engineering logo"><span>S2 Engineering</span></a>
+            <nav>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle>Dark</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="section-head">
+        <h2>Careers</h2>
+        <p>Join S2 Engineering and support transportation, public works, and infrastructure projects throughout California.</p>
+      </div>
+
+      <div class="category-intro">
+        <article class="card">
+          <p>We seek professionals who value quality, accountability, and teamwork in the delivery of field and office engineering services. Our assignments span construction management, source inspection, materials testing, and quality oversight programs.</p>
+        </article>
+      </div>
+
+      <h3 class="section-title">Benefits</h3>
+      <div class="grid">
+        <article class="card">
+          <ul class="list">
+            <li>Medical, dental, and vision coverage</li>
+            <li>401(k) plan support</li>
+            <li>Paid holidays and paid time off</li>
+            <li>Training and growth opportunities</li>
+            <li>Collaborative, field-focused project culture</li>
+          </ul>
+        </article>
+      </div>
+
+      <h3 class="section-title">Current Openings</h3>
+      <div class="grid careers-openings" id="careers-openings" aria-live="polite">
+        <article class="card">
+          <p>Loading current openings...</p>
+        </article>
+      </div>
+      <article class="card careers-empty" id="careers-empty" hidden>
+        <p>Currently, there are no open positions.</p>
+      </article>
+
+      <h3 class="section-title">Resume Submission</h3>
+      <article class="card">
+        <p>Submit your resume for current or upcoming opportunities. Our team will review your information and contact you if your experience matches upcoming project needs.</p>
+        <form id="careers-apply-form" class="careers-form" action="forms/careers-apply.php" method="post" enctype="multipart/form-data">
+          <div class="careers-form-grid">
+            <label for="applicant_name">Full Name</label>
+            <input id="applicant_name" name="applicant_name" type="text" required>
+
+            <label for="applicant_email">Email</label>
+            <input id="applicant_email" name="applicant_email" type="email" required>
+
+            <label for="applicant_phone">Phone</label>
+            <input id="applicant_phone" name="applicant_phone" type="tel" required>
+
+            <label for="job_title">Position of Interest</label>
+            <input id="job_title" name="job_title" type="text" placeholder="Example: Construction Inspector">
+
+            <label for="resume_file">Resume (PDF, DOC, DOCX)</label>
+            <input id="resume_file" name="resume_file" type="file" accept=".pdf,.doc,.docx" required>
+
+            <label for="cover_message">Message</label>
+            <textarea id="cover_message" name="cover_message" rows="5" placeholder="Brief summary of experience and availability"></textarea>
+          </div>
+          <input id="job_id" name="job_id" type="hidden" value="">
+          <p class="careers-form-actions">
+            <button class="btn" type="submit">Submit Resume</button>
+          </p>
+          <p id="careers-apply-feedback" class="careers-feedback" aria-live="polite"></p>
+        </form>
+      </article>
+
+      <p class="service-backlink"><a class="btn" href="services.html">Back to Services</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <section class="footer-col">
+        <a class="brand brand-link" href="index.html"><img src="assets/img/logo-s2.svg" alt="S2 Engineering logo"><span>S2 Engineering</span></a>
+        <p>Construction management, inspection services, and materials testing for critical infrastructure across California.</p>
+      </section>
+      <section class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </section>
+      <section class="footer-col">
+        <h3>Project Categories</h3>
+        <ul class="footer-links">
+          <li><a href="category-source-inspection.html">Source Inspection</a></li>
+          <li><a href="category-quality-testing.html">Quality &amp; Testing</a></li>
+          <li><a href="category-consultant-cm.html">Consultant CM</a></li>
+          <li><a href="category-port-rail-transit.html">Port / Rail / Transit</a></li>
+        </ul>
+      </section>
+      <section class="footer-col">
+        <h3>Contact</h3>
+        <p>8608 Utica Avenue, Suite 100<br>Rancho Cucamonga, CA 91730</p>
+        <p><strong>Phone:</strong> <a href="tel:+19093738240">(909) 373-8240</a></p>
+      </section>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 S2 Engineering. All rights reserved.</p>
+      <p>Serving transportation, bridge, rail, and public works programs statewide.</p>
+    </div>
+  </footer>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/careers.js"></script>
+</body>
+</html>
+

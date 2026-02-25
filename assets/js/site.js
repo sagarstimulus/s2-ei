@@ -113,9 +113,74 @@
     });
   }
 
+  function bindHeroSlideshow() {
+    var slider = document.querySelector('[data-hero-slider]');
+    if (!slider) return;
+
+    var slides = Array.prototype.slice.call(slider.querySelectorAll('.hero-slide'));
+    var dots = Array.prototype.slice.call(slider.querySelectorAll('[data-hero-dot]'));
+    if (!slides.length || slides.length < 2) return;
+
+    var activeIndex = 0;
+    var timer = null;
+    var intervalMs = 2000;
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function render(index) {
+      slides.forEach(function (slide, i) {
+        slide.classList.toggle('is-active', i === index);
+      });
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle('is-active', i === index);
+        dot.setAttribute('aria-pressed', i === index ? 'true' : 'false');
+      });
+      activeIndex = index;
+    }
+
+    function step(direction) {
+      var next = (activeIndex + direction + slides.length) % slides.length;
+      render(next);
+    }
+
+    function stop() {
+      if (!timer) return;
+      window.clearInterval(timer);
+      timer = null;
+    }
+
+    function start() {
+      if (prefersReducedMotion) return;
+      stop();
+      timer = window.setInterval(function () { step(1); }, intervalMs);
+    }
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () {
+        render(i);
+        start();
+      });
+    });
+
+    slider.addEventListener('mouseenter', stop);
+    slider.addEventListener('mouseleave', start);
+    slider.addEventListener('focusin', stop);
+    slider.addEventListener('focusout', start);
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        stop();
+        return;
+      }
+      start();
+    });
+
+    render(0);
+    start();
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     bindThemeToggle();
     bindReveal();
     bindGalleryModal();
+    bindHeroSlideshow();
   });
 })();

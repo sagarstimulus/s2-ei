@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -13,98 +13,135 @@
   <header class="topbar">
     <div class="container topbar-inner">
       <a class="brand brand-link" href="index.html"><img src="assets/img/logo-s2.svg" alt="S2 Engineering logo"><span>S2 Engineering</span></a>
-      <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <div class="nav-dropdown">
-          <button class="dropdown-toggle" type="button">Project Categories</button>
-          <div class="dropdown-menu">
-            <a href="category-source-inspection.html">Source Inspection</a>
-            <a href="category-quality-testing.html">Quality & Testing</a>
-            <a href="category-consultant-cm.html">Consultant CM</a>
-            <a href="category-port-rail-transit.html">Port / Rail / Transit</a>
-          </div>
-        </div>
-        <a href="#clients">Clients</a>
-        <a href="#locations">Locations</a>
-        <a href="#contact">Contact</a>
+            <nav>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
       <button class="theme-toggle" type="button" data-theme-toggle>Dark</button>
     </div>
   </header>
 
-  <section class="hero" id="home">
-    <img class="hero-bg" src="assets/img/s2/curated/hero-main.jpg" alt="S2 Engineering project work">
+  <section class="hero" id="home" data-hero-slider>
+    <div class="hero-slides" aria-hidden="true">
+      <figure class="hero-slide is-active">
+        <img src="assets/img/s2/curated/project-1.jpg" alt="Materials testing in the field and laboratory environments">
+      </figure>
+      <figure class="hero-slide">
+        <img src="assets/img/s2/curated/project-2.jpg" alt="Construction management team supporting major public works delivery">
+      </figure>
+      <figure class="hero-slide">
+        <img src="assets/img/s2/curated/project-3.jpg" alt="Inspection activity supporting quality assurance on infrastructure sites">
+      </figure>
+      <figure class="hero-slide">
+        <img src="assets/img/s2/curated/project-4.jpg" alt="Bridge and roadway infrastructure project oversight">
+      </figure>
+      <figure class="hero-slide">
+        <img src="assets/img/s2/curated/project-5.jpg" alt="Transit infrastructure coordination and construction support">
+      </figure>
+      <figure class="hero-slide">
+        <img src="assets/img/s2/curated/project-7.jpg" alt="On-site inspection and quality documentation activities">
+      </figure>
+      <figure class="hero-slide">
+        <img src="assets/img/s2/curated/project-9.jpg" alt="Road, bridge, and transportation corridor project services">
+      </figure>
+    </div>
     <div class="container hero-content">
-      <span class="kicker">WELCOME TO</span>
       <h1>S2 Engineering</h1>
-      <p>Established in 2001, S2 Engineering is a certified DBE firm specializing in construction management, inspection services, and materials testing for public works projects across California.</p>
-      <a class="btn" href="#about">Read More</a>
+      <p class="hero-tagline">Providing Quality Management, Engineering, Inspection, and Materials Testing Services</p>
+      <p class="hero-subtext">Services Delivered to Infrastructure Projects Throughout Our Community</p>
+      <a class="btn" href="about.html">Learn More</a>
+    </div>
+    <div class="hero-dots" aria-label="Hero slideshow controls">
+      <button class="hero-dot is-active" type="button" aria-label="Show slide 1" data-hero-dot="0"></button>
+      <button class="hero-dot" type="button" aria-label="Show slide 2" data-hero-dot="1"></button>
+      <button class="hero-dot" type="button" aria-label="Show slide 3" data-hero-dot="2"></button>
+      <button class="hero-dot" type="button" aria-label="Show slide 4" data-hero-dot="3"></button>
+      <button class="hero-dot" type="button" aria-label="Show slide 5" data-hero-dot="4"></button>
+      <button class="hero-dot" type="button" aria-label="Show slide 6" data-hero-dot="5"></button>
+      <button class="hero-dot" type="button" aria-label="Show slide 7" data-hero-dot="6"></button>
     </div>
   </section>
 
   <section class="section" id="about">
     <div class="container">
       <div class="section-head">
-        <h2>About Us</h2>
-        <p>Our reputation is built on delivering high-quality, professional services with precision, reliability, and a deep understanding of project dynamics. By understanding each project's needs and stakeholder priorities, our professionals take proactive action to help projects move to successful completion.</p>
+        <h2>WHO WE ARE</h2>
       </div>
-      <div class="grid-2">
-        <article class="card">
-          <h3>Recognized Project Contributions</h3>
-          <ul class="list">
-            <li>North First Avenue Bridge Project - 2025 ACEC Engineering Excellence Award (Construction Management category)</li>
-            <li>ASCE Los Angeles Section Construction Project of the Year (2014) for I-215 Segments 1 and 2 Reconstruction and Widening</li>
-            <li>ASCE Los Angeles Section Bridge Project of the Year (2014) for North Milliken Grade Separation Project</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Core Capabilities</h3>
-          <ul class="list">
-            <li>Construction Management</li>
-            <li>Quality Management and Quality Assurance</li>
-            <li>Inspection Services and Office Engineering</li>
-            <li>Structural and Electrical Engineering</li>
-            <li>Constructability Reviews and Project Scheduling</li>
-            <li>Dispute Resolution, Storm Water Compliance, and Labor Compliance</li>
-            <li>Material Testing and Source Inspection</li>
-          </ul>
-        </article>
-      </div>
+      <article class="card about-copy">
+        <p>Established in 2001, S2 Engineering is a certified DBE firm specializing in construction management, inspection services, and materials testing for public works projects across California. Our reputation is built on delivering high-quality, professional services with precision, reliability, and a deep understanding of project dynamics.</p>
+        <p>At the core of our business is a commitment to excellence. We pride ourselves on our ability to anticipate project needs and proactively address challenges, ensuring each project progresses smoothly and successfully. Our experienced team works closely with stakeholders to fully understand their objectives, enabling us to provide tailored solutions that meet or exceed expectations.</p>
+      </article>
     </div>
   </section>
 
   <section class="section" id="services">
     <div class="container">
       <div class="section-head">
-        <h2>Services</h2>
-        <p>Our service lines are built around Construction Management and Materials Testing / Source Inspection.</p>
+        <h2>What We Do</h2>
+        <p>S2 Engineering is dedicated to partnering with owners, contractors, design-builders, and project delivery teams to effectively provide Quality Management, Pavement Engineering, Materials Design, Construction Inspection, and Testing Services.</p>
       </div>
-      <div class="grid">
-        <article class="card">
-          <h3>Construction Management</h3>
-          <p>S2 Engineering provides construction management and construction inspection services on public works projects throughout California, including I-5 North County Enhancement, SR-210 Lane Addition/Baseline Interchange, and District 7 On-Call Roadway Construction Inspection services.</p>
-          <ul class="list">
-            <li>Resident Engineering</li>
-            <li>Structure Representative</li>
-            <li>Special Inspection</li>
-            <li>Office Engineering</li>
-            <li>Scheduling and Claims Management</li>
-            <li>Project Closeout</li>
-          </ul>
+      <div class="services-grid">
+        <article class="card service-card">
+          <a class="service-card-link" href="service-construction-management.html">
+            <img src="assets/img/s2/curated/project-2.jpg" alt="Construction management support for freeway and infrastructure projects">
+            <div class="service-card-body">
+              <h3>Construction Management</h3>
+              <p>Full-service construction management from preconstruction through project closeout for transportation and public works.</p>
+              <ul class="list">
+                <li>Resident engineering and office engineering support</li>
+                <li>Scheduling, claims mitigation, and issue resolution</li>
+                <li>Agency and stakeholder coordination</li>
+              </ul>
+              <span class="service-cta">View Service Details</span>
+            </div>
+          </a>
         </article>
-        <article class="card">
-          <h3>Materials Testing / Source Inspection</h3>
-          <p>S2 has provided materials sampling and testing for Caltrans and other agencies across Districts 4, 6, 7, 8, and 9 for more than two decades, supported by Caltrans and AASHTO-accredited laboratories.</p>
-          <ul class="list">
-            <li>Testing support: ACI, ASTM, California Tests, AASHTO Test Methods, ASI Standards</li>
-            <li>Source Inspection Quality Management Plan (SIQMP) development</li>
-            <li>Structural Materials Representative and QAP development</li>
-            <li>IQA / QMA audits and QA/QV support</li>
-            <li>Certifications including PCI, ASNT, AMPP, AWS, ICC</li>
-          </ul>
+        <article class="card service-card">
+          <a class="service-card-link" href="service-quality-materials-testing.html">
+            <img src="assets/img/s2/curated/project-5.jpg" alt="Quality management and materials testing services in field and laboratory">
+            <div class="service-card-body">
+              <h3>Quality Management &amp; Materials Testing</h3>
+              <p>Integrated QA/QC programs with accredited field and laboratory testing for concrete, asphalt, aggregates, and soils.</p>
+              <ul class="list">
+                <li>Lab testing and field density/compaction programs</li>
+                <li>Concrete, asphalt, and aggregate verification</li>
+                <li>Independent testing documentation and reporting</li>
+              </ul>
+              <span class="service-cta">View Service Details</span>
+            </div>
+          </a>
+        </article>
+        <article class="card service-card">
+          <a class="service-card-link" href="service-source-inspection.html">
+            <img src="assets/img/s2/curated/project-4.jpg" alt="Source inspection services for fabricated and structural materials">
+            <div class="service-card-body">
+              <h3>Source Inspection Services</h3>
+              <p>METS-based source inspection services for fabrication plants, structural materials, and project-specific quality plans.</p>
+              <ul class="list">
+                <li>SIQMP, QAP, IQA/QMA audit, and QA/QV support</li>
+                <li>Structural materials representative services</li>
+                <li>Multi-discipline certified inspection staff</li>
+              </ul>
+              <span class="service-cta">View Service Details</span>
+            </div>
+          </a>
+        </article>
+        <article class="card service-card">
+          <a class="service-card-link" href="service-additional-areas.html">
+            <img src="assets/img/s2/curated/project-8.jpg" alt="Additional engineering and agency support services">
+            <div class="service-card-body">
+              <h3>Additional Service Areas</h3>
+              <p>Expanded technical support tailored to agency and project delivery needs beyond core service lines.</p>
+              <ul class="list">
+                <li>Pavement engineering and materials design</li>
+                <li>QA/QC oversight and quality validation roles</li>
+                <li>Public agency support and compliance coordination</li>
+              </ul>
+              <span class="service-cta">View Service Details</span>
+            </div>
+          </a>
         </article>
       </div>
     </div>
@@ -168,19 +205,32 @@
 
 <section class="section" id="clients">
     <div class="container">
-      <div class="section-head"><h2>Our Clients</h2></div>
-      <div class="clients">
-        <div class="card">Caltrans</div><div class="card">SBCTA</div><div class="card">CHSRA</div>
-        <div class="card">OCTA</div><div class="card">SANDAG</div><div class="card">RCTC</div>
-        <div class="card">Port of Long Beach</div><div class="card">City of Manhattan Beach</div><div class="card">City of Long Beach</div>
-        <div class="card">LA Metro</div><div class="card">LA County DPW</div>
+      <div class="section-head">
+        <h2>Our Clients</h2>
+        <p>Representative public agencies and transportation partners.</p>
+      </div>
+      <div class="client-logo-grid">
+        <article class="card client-logo-item"><img src="assets/img/s2/clients-wix/78bab6_8925dc76fe714c678d504cc513ab7c99~mv2.png" alt="Caltrans logo"></article>
+        <article class="card client-logo-item"><img src="assets/img/s2/clients-wix/78bab6_6ef38a98faba4fde9ab8552db0264be4~mv2.png" alt="SBCTA logo"></article>
+        <article class="card client-logo-item"><img src="assets/img/s2/clients-wix/78bab6_2ca74a2fccee4cccb51d36304eb0dfda~mv2.png" alt="California High-Speed Rail Authority logo"></article>
+        <article class="card client-logo-item"><img src="assets/img/s2/clients-wix/78bab6_6ffa995d7bb04930b58e98232a6f137d~mv2.png" alt="OCTA logo"></article>
+        <article class="card client-logo-item"><img src="assets/img/s2/clients-wix/78bab6_87a73cc856e546c98f8ef35925b4d46b~mv2.png" alt="SANDAG logo"></article>
+        <article class="card client-logo-item"><img src="assets/img/s2/clients-wix/78bab6_bd0c4c8cfe994dbe806ba5e577de8caf~mv2.png" alt="RCTC logo"></article>
+        <article class="card client-logo-item"><img src="assets/img/s2/clients-wix/78bab6_2ca880bb91de4ac9b3fce85de254af89~mv2.jpg" alt="Port of Long Beach logo"></article>
+        <article class="card client-logo-item"><img src="assets/img/s2/clients-wix/78bab6_9feca962899147e1bd15ed4c742c5150~mv2.png" alt="City of Manhattan Beach logo"></article>
+        <article class="card client-logo-item"><img src="assets/img/s2/clients-wix/78bab6_5820b88abd8c4656b7710f9ff3161451~mv2.png" alt="City of Long Beach logo"></article>
+        <article class="card client-logo-item"><img src="assets/img/s2/clients-wix/78bab6_dd95aef27c6a4e7bad6fd2d3bba8f4dd~mv2.png" alt="LA Metro logo"></article>
+        <article class="card client-logo-item"><img src="assets/img/s2/clients-wix/78bab6_f82d1f46c0014de0b5a6e3f5185ec01d~mv2.png" alt="LA County Department of Public Works logo"></article>
       </div>
     </div>
   </section>
 
   <section class="section" id="locations">
     <div class="container">
-      <div class="section-head"><h2>S2 Locations</h2></div>
+      <div class="section-head">
+        <h2>S2 Locations</h2>
+        <p>Statewide office and laboratory support locations.</p>
+      </div>
       <div class="locations">
         <article class="card"><h3>Headquarters</h3><p>8608 Utica Ave, Suite 100<br>Rancho Cucamonga, CA 91730</p></article>
         <article class="card"><h3>Signal Hill</h3><p>3250 E. Willow St<br>Signal Hill, CA 90755</p></article>
@@ -192,60 +242,45 @@
     </div>
   </section>
 
-  <section class="section" id="gallery">
-    <div class="container">
-      <div class="section-head"><h2>Project Gallery</h2></div>
-      <div class="gallery-grid" data-gallery-grid>
-        <button class="gallery-tile tile-wide" type="button" data-src="assets/img/s2/curated/gallery-1.jpg" data-caption="HSR Project">
-          <img src="assets/img/s2/curated/gallery-1.jpg" alt="HSR Project">
-        </button>
-        <button class="gallery-tile" type="button" data-src="assets/img/s2/curated/gallery-2.jpg" data-caption="HSR Project">
-          <img src="assets/img/s2/curated/gallery-2.jpg" alt="HSR Project">
-        </button>
-        <button class="gallery-tile tile-tall" type="button" data-src="assets/img/s2/curated/gallery-3.jpg" data-caption="METS QASI">
-          <img src="assets/img/s2/curated/gallery-3.jpg" alt="METS QASI">
-        </button>
-        <button class="gallery-tile" type="button" data-src="assets/img/s2/curated/gallery-4.jpg" data-caption="METS QASI">
-          <img src="assets/img/s2/curated/gallery-4.jpg" alt="METS QASI">
-        </button>
-        <button class="gallery-tile" type="button" data-src="assets/img/s2/curated/gallery-5.jpg" data-caption="METS QASI">
-          <img src="assets/img/s2/curated/gallery-5.jpg" alt="METS QASI">
-        </button>
-        <button class="gallery-tile" type="button" data-src="assets/img/s2/curated/gallery-6.jpg" data-caption="OCTA I-5">
-          <img src="assets/img/s2/curated/gallery-6.jpg" alt="OCTA I-5">
-        </button>
-        <button class="gallery-tile" type="button" data-src="assets/img/s2/curated/gallery-7.jpg" data-caption="Materials Testing">
-          <img src="assets/img/s2/curated/gallery-7.jpg" alt="Materials Testing">
-        </button>
-        <button class="gallery-tile" type="button" data-src="assets/img/s2/curated/gallery-8.jpg" data-caption="Plant Inspection">
-          <img src="assets/img/s2/curated/gallery-8.jpg" alt="Plant Inspection">
-        </button>
-      </div>
-      <div class="gallery-modal" data-gallery-modal aria-hidden="true">
-        <button class="gallery-modal-close" type="button" aria-label="Close gallery">&times;</button>
-        <button class="gallery-modal-nav prev" type="button" aria-label="Previous image">&#10094;</button>
-        <figure class="gallery-modal-figure">
-          <img src="" alt="" data-gallery-modal-image>
-          <figcaption data-gallery-modal-caption></figcaption>
-        </figure>
-        <button class="gallery-modal-nav next" type="button" aria-label="Next image">&#10095;</button>
-      </div>
-    </div>
-  </section>
-
   <section class="section" id="contact">
     <div class="container">
-      <div class="section-head"><h2>Contact Us</h2></div>
-      <div class="contact-box">
-        <article class="card">
-          <h3>S2 Engineering</h3>
-          <p>8608 Utica Avenue<br>Rancho Cucamonga, CA 91730</p>
-          <p><strong>Phone:</strong> (909) 373-8240</p>
-        </article>
-        <article class="card">
+      <div class="section-head">
+        <h2>Contact Us</h2>
+        <p>Tell us about your upcoming project and service needs.</p>
+      </div>
+      <div class="contact-structured">
+        <div class="contact-stack">
+          <article class="card contact-details">
+            <h3>S2 Engineering</h3>
+            <p><strong>Address:</strong><br>8608 Utica Avenue, Suite 100<br>Rancho Cucamonga, CA 91730</p>
+            <p><strong>Phone:</strong> <a href="tel:+19093738240">(909) 373-8240</a></p>
+            <p><strong>Email:</strong> <a href="mailto:contact@example.com">contact@example.com</a></p>
+          </article>
+          <article class="card contact-map">
+            <h3>Map</h3>
+            <iframe title="S2 Engineering Headquarters Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=8608+Utica+Avenue%2C+Suite+100%2C+Rancho+Cucamonga%2C+CA+91730&output=embed"></iframe>
+          </article>
+        </div>
+        <article class="card contact-form-card">
           <h3>Send Us a Message</h3>
-          <p>Please use your preferred email client or call us directly for immediate support.</p>
-          <p><a class="btn" href="tel:+19093738240">Call Now</a></p>
+          <form class="contact-form" action="forms/contact.php" method="post">
+            <label for="contact-name">Name</label>
+            <input id="contact-name" name="name" type="text" required>
+
+            <label for="contact-email">Email</label>
+            <input id="contact-email" name="email" type="email" required>
+
+            <label for="contact-phone">Telephone</label>
+            <input id="contact-phone" name="phone" type="tel">
+
+            <label for="contact-subject">Subject</label>
+            <input id="contact-subject" name="subject" type="text" value="Website Inquiry" required>
+
+            <label for="contact-message">Your Message</label>
+            <textarea id="contact-message" name="message" rows="5" required></textarea>
+
+            <p class="contact-form-actions"><button class="btn" type="submit">Submit</button></p>
+          </form>
         </article>
       </div>
     </div>
@@ -258,9 +293,10 @@
       <section class="footer-col">
         <h3>Quick Links</h3>
         <ul class="footer-links">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="careers.html">Careers</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </section>
@@ -287,13 +323,4 @@
   <script src="assets/js/site.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 

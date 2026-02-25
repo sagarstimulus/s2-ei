@@ -1,0 +1,25 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Quality and Materials Testing</title>
+  <desc id="desc">Abstract quality and materials testing illustration with charts and specimen icons.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e2f37"/>
+      <stop offset="100%" stop-color="#1b7c8c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="0" y="630" width="1600" height="270" fill="#0d2730"/>
+  <rect x="180" y="210" width="410" height="340" rx="22" fill="#f1fbff" fill-opacity="0.1" stroke="#9be2ef" stroke-opacity="0.45"/>
+  <rect x="250" y="290" width="270" height="30" rx="8" fill="#ccf4ff" fill-opacity="0.3"/>
+  <rect x="250" y="350" width="220" height="30" rx="8" fill="#ccf4ff" fill-opacity="0.24"/>
+  <rect x="250" y="410" width="240" height="30" rx="8" fill="#ccf4ff" fill-opacity="0.2"/>
+  <g fill="#b7ecfa" opacity="0.9">
+    <rect x="760" y="260" width="78" height="280" rx="14"/>
+    <rect x="878" y="220" width="78" height="320" rx="14"/>
+    <rect x="996" y="300" width="78" height="240" rx="14"/>
+  </g>
+  <rect x="1120" y="210" width="300" height="340" rx="22" fill="#f1fbff" fill-opacity="0.09" stroke="#9be2ef" stroke-opacity="0.45"/>
+  <circle cx="1270" cy="316" r="58" fill="#b8edfa" opacity="0.9"/>
+  <circle cx="1270" cy="316" r="28" fill="#1b6a79"/>
+  <text x="170" y="760" fill="#ecfaff" font-family="Space Grotesk, Segoe UI, Arial, sans-serif" font-size="56" font-weight="700">Quality and Materials Testing</text>
+</svg>
