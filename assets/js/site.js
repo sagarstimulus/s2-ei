@@ -117,9 +117,40 @@
     var slider = document.querySelector('[data-hero-slider]');
     if (!slider) return;
 
-    var slides = Array.prototype.slice.call(slider.querySelectorAll('.hero-slide'));
-    var dots = Array.prototype.slice.call(slider.querySelectorAll('[data-hero-dot]'));
+    var slidesContainer = slider.querySelector('.hero-slides');
+    var dotsContainer = slider.querySelector('.hero-dots');
+    if (!slidesContainer || !dotsContainer) return;
+
+    var slides = Array.prototype.slice.call(slidesContainer.querySelectorAll('.hero-slide'));
     if (!slides.length || slides.length < 2) return;
+
+    function shuffle(items) {
+      for (var i = items.length - 1; i > 0; i -= 1) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = items[i];
+        items[i] = items[j];
+        items[j] = tmp;
+      }
+      return items;
+    }
+
+    shuffle(slides);
+    slides.forEach(function (slide, i) {
+      slide.classList.toggle('is-active', i === 0);
+      slidesContainer.appendChild(slide);
+    });
+
+    dotsContainer.innerHTML = '';
+    var dots = slides.map(function (_, i) {
+      var dot = document.createElement('button');
+      dot.className = 'hero-dot' + (i === 0 ? ' is-active' : '');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', 'Show slide ' + (i + 1));
+      dot.setAttribute('data-hero-dot', String(i));
+      dot.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
+      dotsContainer.appendChild(dot);
+      return dot;
+    });
 
     var activeIndex = 0;
     var timer = null;
