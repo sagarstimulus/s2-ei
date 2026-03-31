@@ -1,8 +1,9 @@
 ﻿(function () {
   var root = document.documentElement;
   var storedTheme = localStorage.getItem('s2-theme');
-  if (storedTheme === 'dark' || storedTheme === 'light') {
-    root.setAttribute('data-theme', storedTheme);
+  root.setAttribute('data-theme', 'light');
+  if (storedTheme === 'light') {
+    root.setAttribute('data-theme', 'light');
   }
 
   function updateToggleLabel() {

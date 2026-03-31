@@ -1,0 +1,30 @@
+[
+  {
+    "href": "service-construction-management.php",
+    "image": "assets/img/s2/services/services-construction-management.jpg",
+    "alt": "Construction management support for transportation projects",
+    "title": "Construction Management",
+    "summary": "Resident engineering, office engineering, scheduling, claims management, construction inspection, and project closeout support."
+  },
+  {
+    "href": "service-quality-materials-testing.php",
+    "image": "assets/img/s2/services/services-quality-materials-testing.jpg",
+    "alt": "Quality management and materials testing",
+    "title": "Quality Management & Materials Testing",
+    "summary": "Field and laboratory testing support for concrete, asphalt, aggregates, soils, and compaction programs."
+  },
+  {
+    "href": "service-source-inspection.php",
+    "image": "assets/img/s2/services/services-source-inspection.jpg",
+    "alt": "Source inspection services and METS-based QA support",
+    "title": "Source Inspection",
+    "summary": "METS-based source inspection including SIQMP, structural material verification, and QA/QV services."
+  },
+  {
+    "href": "service-port-rail-transit-services.php",
+    "image": "assets/img/s2/services/services-additional-areas.jpg",
+    "alt": "Additional technical support services",
+    "title": "Port-Rail-Transit Services",
+    "summary": "Pavement engineering, materials design, QA/QC oversight, and public agency support."
+  }
+]

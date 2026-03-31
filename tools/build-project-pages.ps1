@@ -184,6 +184,7 @@ function HeaderHtml([string]$title) {
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="projects.html">Projects</a>
+        <a href="careers.html">Careers</a>
         <a href="index.html#contact">Contact</a>
       </nav>
       <button class="theme-toggle" type="button" data-theme-toggle>Dark</button>
@@ -197,38 +198,21 @@ $footerHtml = @'
   </main>
   <footer class="site-footer">
     <div class="container footer-grid">
-      <section class="footer-col">
-        <a class="brand brand-link" href="index.html"><img src="assets/img/logo-s2.svg" alt="S2 Engineering logo"><span>S2 Engineering</span></a>
-        <p>Construction management, inspection services, and materials testing for critical infrastructure across California.</p>
+      <section class="footer-col footer-brand-col">
+        <a class="brand brand-link footer-brand" href="index.html"><img class="brand-logo footer-brand-logo" src="assets/img/logo-s2.svg" alt="S2 Engineering logo" width="229" height="104"><span>S2 Engineering</span></a>
       </section>
-      <section class="footer-col">
-        <h3>Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="about.html">About</a></li>
+      <section class="footer-col footer-links-col">
+        <ul class="footer-links footer-links-inline">
+          <li><a href="about.html">About Us</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="careers.html">Careers</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </section>
-      <section class="footer-col">
-        <h3>Project Categories</h3>
-        <ul class="footer-links">
-          <li><a href="category-consultant-cm.html">Consultant CM &amp; Inspection</a></li>
-          <li><a href="category-quality-testing.html">Quality Mgmt &amp; Materials Testing</a></li>
-          <li><a href="category-source-inspection.html">Source Inspection</a></li>
-          <li><a href="category-port-rail-transit.html">Port / Rail / Transit</a></li>
-        </ul>
-      </section>
-      <section class="footer-col">
-        <h3>Contact</h3>
-        <p>8608 Utica Avenue, Suite 100<br>Rancho Cucamonga, CA 91730</p>
-        <p><strong>Phone:</strong> <a href="tel:+19093738240">(909) 373-8240</a></p>
-      </section>
     </div>
     <div class="container footer-bottom">
       <p>&copy; 2026 S2 Engineering. All rights reserved.</p>
-      <p>Serving transportation, bridge, rail, and public works programs statewide.</p>
     </div>
   </footer>
   <script src="assets/js/site.js"></script>
@@ -305,13 +289,47 @@ foreach ($c in $categories) { $categoryByKey[$c.Key] = $c }
 # Build project detail pages
 foreach ($r in $records) {
   $cat = $categoryByKey[$r.category_key]
+  $compactLayout = @("consultant-cm", "quality-testing", "source-inspection") -contains $r.category_key
   $serviceText = ($r.services -replace "\u2022", "|" -replace "\s{2,}", "|")
   $serviceLines = @($serviceText.Split("|") | ForEach-Object { $_.Trim() } | Where-Object { $_ } | Select-Object -First 6)
   if ($serviceLines.Count -eq 0) { $serviceLines = @("Project-specific quality management and inspection services.") }
   $serviceHtml = ($serviceLines | ForEach-Object { "<li>$([System.Net.WebUtility]::HtmlEncode($_))</li>" }) -join "`n            "
-  $imageHtml = ($r.images | ForEach-Object { "<article class=""card""><img src=""$($_.path)"" alt=""$([System.Net.WebUtility]::HtmlEncode($r.title))""><p>$([System.Net.WebUtility]::HtmlEncode($_.caption))</p></article>" }) -join "`n        "
+  if ($compactLayout) {
+    $heroImage = if ($r.slug -eq "project-manhattan-beach-sepulveda-bridge-widening") { $r.images[-1] } else { $r.images[0] }
+    $galleryImages = if ($r.slug -eq "project-manhattan-beach-sepulveda-bridge-widening") {
+      @($r.images | Where-Object { $_.path -ne $heroImage.path } | Select-Object -First 2)
+    } else {
+      @($r.images | Where-Object { $_.path -ne $heroImage.path } | Select-Object -First 3)
+    }
+    $serviceSummary = [System.Net.WebUtility]::HtmlEncode(($serviceLines -join "; "))
+    $galleryClass = if ($galleryImages.Count -le 2) { "service-media service-media-2" } else { "service-media" }
+    $imageHtml = ($galleryImages | ForEach-Object { "<article class=""card""><img src=""$($_.path)"" alt=""$([System.Net.WebUtility]::HtmlEncode($r.title))""></article>" }) -join "`n        "
+    $body = @"
+    <section class="hero compact">
+      <img src="$($heroImage.path)" alt="$([System.Net.WebUtility]::HtmlEncode($r.title))">
+    </section>
+    <section class="section">
+      <div class="section-head">
+        <h2>$([System.Net.WebUtility]::HtmlEncode($r.title))</h2>
+        <p>$([System.Net.WebUtility]::HtmlEncode($r.background))</p>
+      </div>
+      <article class="card about-copy about-intro-copy">
+        <p><strong>Project Details:</strong> Owner: $([System.Net.WebUtility]::HtmlEncode($r.owner)); Location: $([System.Net.WebUtility]::HtmlEncode($r.location)); Delivery Method: $([System.Net.WebUtility]::HtmlEncode($r.delivery)); Status / Completion: $([System.Net.WebUtility]::HtmlEncode($r.completion)).</p>
+        <p><strong>Our Role:</strong> $([System.Net.WebUtility]::HtmlEncode($r.role))</p>
+        <p><strong>Services Provided:</strong> $serviceSummary.</p>
+        <p><strong>Added Value:</strong> $([System.Net.WebUtility]::HtmlEncode($r.added))</p>
+      </article>
+      <h3 class="section-title">Project Images</h3>
+      <div class="$galleryClass">
+        $imageHtml
+      </div>
+      <p class="service-backlink"><a class="btn" href="$($cat.File)">Back to Category</a></p>
+    </section>
+"@
+  } else {
+    $imageHtml = ($r.images | ForEach-Object { "<article class=""card""><img src=""$($_.path)"" alt=""$([System.Net.WebUtility]::HtmlEncode($r.title))""><p>$([System.Net.WebUtility]::HtmlEncode($_.caption))</p></article>" }) -join "`n        "
 
-  $body = @"
+    $body = @"
     <section class="hero compact">
       <img src="$($r.images[0].path)" alt="$([System.Net.WebUtility]::HtmlEncode($r.title))">
     </section>
@@ -349,6 +367,7 @@ foreach ($r in $records) {
       <p class="service-backlink"><a class="btn" href="$($cat.File)">Back to Category</a></p>
     </section>
 "@
+  }
   Set-Content -Path (Join-Path $siteRoot ($r.slug + ".html")) -Value ((HeaderHtml ("S2 Engineering | " + $r.title)) + $body + $footerHtml) -NoNewline
 }
 

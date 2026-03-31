@@ -1,0 +1,30 @@
+[
+  {
+    "href": "category-consultant-cm.php",
+    "image": "assets/img/projects/project-sbcta-cherry-avenue-grade-separation/img-01.jpg",
+    "alt": "Consultant Construction Management and Inspection Projects",
+    "title": "Consultant Construction Management & Inspection Projects",
+    "summary": "Bridge and roadway programs with resident engineering, inspection, quality oversight, and stakeholder coordination."
+  },
+  {
+    "href": "category-quality-testing.php",
+    "image": "assets/img/projects/project-i5-north-county-enhancement-los-angeles/img-01.jpg",
+    "alt": "Quality Management and Materials Testing Projects",
+    "title": "Quality Management & Materials Testing Projects",
+    "summary": "Program-level quality management and materials testing support for concrete, asphalt, aggregates, soils, and plant operations."
+  },
+  {
+    "href": "category-source-inspection.php",
+    "image": "assets/img/projects/project-sandag-mid-coast-transit-corridor/img-01.webp",
+    "alt": "Source Inspection Projects",
+    "title": "Source Inspection Projects",
+    "summary": "Fabrication verification, source inspections, and compliance reporting for structural and transportation projects."
+  },
+  {
+    "href": "category-port-rail-transit.php",
+    "image": "assets/img/projects/project-city-of-long-beach-civil-public-works/img-01.jpg",
+    "alt": "Port, Rail, and Transit Projects",
+    "title": "Port / Rail / Transit Projects",
+    "summary": "Port modernization, transit upgrades, and rail-adjacent delivery support with complete project controls and documentation."
+  }
+]
