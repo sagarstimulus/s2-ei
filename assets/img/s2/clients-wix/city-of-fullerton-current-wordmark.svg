@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" role="img" aria-labelledby="title desc">
-  <title id="title">City of Fullerton wordmark</title>
-  <desc id="desc">A clean wordmark for the City of Fullerton using current-style text branding rather than an older city seal.</desc>
-  <rect width="420" height="120" fill="#ffffff"/>
-  <text x="24" y="34" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="4" fill="#6b7c93">CITY OF</text>
-  <text x="24" y="76" font-family="'Segoe UI', Arial, sans-serif" font-size="42" font-weight="800" letter-spacing="1.5" fill="#174f79">FULLERTON</text>
-  <text x="26" y="100" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="5" fill="#2f6f96">CALIFORNIA</text>
-</svg>
